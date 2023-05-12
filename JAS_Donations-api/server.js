@@ -5,9 +5,11 @@ const bcrypt = require('bcrypt')
 const {userValidate} = require('./validators/userValidator')
 const {authMiddleware} = require('./middlewares/userMiddleware')
 const jwt = require('jsonwebtoken')
+const cors = require('cors')
 require('dotenv').config()
 
 app.use (express.json())
+app.use(cors())
 
 app.get('/filter', (req, res)=>{
     const {location,cause,organization_size} =req.body
