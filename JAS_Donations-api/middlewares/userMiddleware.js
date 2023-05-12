@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken')
 
 function authMiddleware(req, res, next){
     const {token} = req.headers
-   const verifyToken = jwt.verify(token, proess.env.SECRET_KEY);
+   const verifyToken = jwt.verify(token, process.env.SECRET_KEY);
     if (!token) {
       return res.sendStatus(401);
     }
